@@ -2,7 +2,7 @@ P = {}
 
 P.dispatch = "qs-dispatch" -- OPTIONS: 1 = "qs-dispatch",  2 = "cd-dispatch"
 
-P.webhook = "" -- discord webhook here!!!
+-- LOGS ARE IN s_paikat.lua 
 
 P.rob_only_once = true -- if set to FALSE then you can rob the same ATM multiple times (no cooldowns etc)
 
