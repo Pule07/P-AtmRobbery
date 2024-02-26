@@ -158,6 +158,28 @@ elseif P.dispatch == "cd-dispatch" then
             radius = 0,
         }
     })
+elseif P.dispatch == "core.dispatch" then
+    TriggerServerEvent(
+        "core_dispatch:addMessage",
+        "ATM Robbery in progress!",
+        {coords[1], coords[2], coords[3]},
+        "police",
+        5000,
+        11,
+        5
+    )
+elseif P.dispatch == "op-dispatch" then
+
+        local job = "police" -- Jobs that will recive the alert
+        local text = "ATM Robbery" -- Main text alert
+        local coords = GetEntityCoords(PlayerPedId()) -- Alert coords
+        local id = GetPlayerServerId(PlayerId()) -- Player that triggered the alert
+        local title = "Robbery in progress" -- Main title alert
+        local panic = true -- Allow/Disable panic effect
+       
+        TriggerServerEvent('Opto_dispatch:Server:SendAlert', job, title, text, coords, panic, id)
+
+end
 
         end
 
@@ -181,6 +203,6 @@ elseif P.dispatch == "cd-dispatch" then
 
 end
 end
-end
+
 
 
