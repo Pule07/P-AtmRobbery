@@ -36,7 +36,7 @@ local model = {'prop_atm_02', '	prop_atm_03', "prop_atm_01", "prop_fleeca_atm"}
             return
         else
 
-
+        TriggerServerEvent("pule:log")
         local success = lib.skillCheck({'medium', 'medium', 'hard'}, {'e'})
 
         if success then
