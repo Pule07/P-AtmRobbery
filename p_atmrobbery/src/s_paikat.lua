@@ -48,7 +48,7 @@ local randomItemi = tyypit[randomIndexi]
   xPlayer.addInventoryItem(randomItemi, rahat)
 
 
-local logs = P.webhook
+local logs = "WEBHOOk"
 local communityname = "@pule_logs"
 local communtiylogo = "https://media.discordapp.net/attachments/1205619128250138625/1208495574110834748/pule.jpg?ex=65ecb8b5&is=65da43b5&hm=2ae990f2bf8a7a3b73e1ef03a5ba16cc738dcfd1eecdbc99b0a269867741132e&=&format=webp&width=671&height=671" --Must end with .png
 
