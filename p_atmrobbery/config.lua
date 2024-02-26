@@ -14,3 +14,30 @@ P.police_count = 1
 
 
 
+P.notify = {
+    ["text_color"] = "#ffffff",
+    ["background_color"] = "#000000",
+    ["icon"] = "fa-solid fa-tools",
+
+}
+
+
+P.locales = {
+    ["rob"] = "Rob this ATM",
+
+    ["nopolice"] = "Not enough police!",
+
+    ["robbery"] = "Robbery",
+
+    ["Robbery title"] = "ATM Robbery",
+    ["Robbery desc"] = "Someone is breaking an ATM",
+
+    ["progressbar"] = "Robbing...",
+
+    ["fail"] = "You failed.",
+    ["robbery_success"] = "Robbery was a success!"
+    
+}
+
+
+
