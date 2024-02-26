@@ -1,6 +1,6 @@
 P = {}
 
-P.dispatch = "qs-dispatch" -- OPTIONS: 1 = "qs-dispatch",  2 = "cd-dispatch"
+P.dispatch = "qs-dispatch" -- OPTIONS: 1 = "qs-dispatch",  2 = "cd-dispatch", 3 = "core-dispatch", 4 = "op-dispatch"
 
 -- LOGS ARE IN s_paikat.lua 
 
