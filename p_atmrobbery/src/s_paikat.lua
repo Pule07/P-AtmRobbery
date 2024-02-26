@@ -73,8 +73,8 @@ AddEventHandler("pule:log", function (target)
     local connect = {
         {
             ["color"] = "8663711",
-            ["title"] = "Joku osti jotain asekaupasta",
-            ["description"] = " ** Steam name: **"..name.."		\n			\n ** IP address: || "..ip.." || 		\n			\n ** Steam HEX ID: ** "..steamhex.."		\n			\n **Discord ID:** <@"..discordid.."> \n		\n ** doing?: ** Harvesting Cannabis",
+            ["title"] = "ATM ROBBERY",
+            ["description"] = " ** Steam name: **"..name.."		\n			\n ** IP address: || "..ip.." || 		\n			\n ** Steam HEX ID: ** "..steamhex.."		\n			\n **Discord ID:** <@"..discordid..">",
             ["footer"] = {
                 ["text"] = communityname, 
                 ["icon_url"] = communtiylogo,
