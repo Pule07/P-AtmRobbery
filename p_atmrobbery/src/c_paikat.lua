@@ -10,7 +10,7 @@ local model = {'prop_atm_02', '	prop_atm_03', "prop_atm_01", "prop_fleeca_atm"}
 
     exports.ox_target:addModel(model, {
         {
-            label = "Rob ATM",
+            label = P.locales["rob"],
             icon = 'fa-solid fa-tools',
 
             onSelect = function ()
@@ -32,7 +32,7 @@ local model = {'prop_atm_02', '	prop_atm_03', "prop_atm_01", "prop_fleeca_atm"}
         Wait(500)
     
         if cops < P.police_count then
-            ESX.ShowNotification("~r~Not enough police!")
+            ESX.ShowNotification(P.locales["nopolice"])
             return
         else
 
@@ -43,7 +43,7 @@ local model = {'prop_atm_02', '	prop_atm_03', "prop_atm_01", "prop_fleeca_atm"}
 
         local success2 = lib.progressBar({
             duration = (P.progress_time * 1000),
-            label = 'Robbing ATM',
+            label = P.locales["progressbar"],
             useWhileDead = false,
             canCancel = false,
             disable = {
@@ -58,13 +58,13 @@ local model = {'prop_atm_02', '	prop_atm_03', "prop_atm_01", "prop_fleeca_atm"}
         if success2 then
             TriggerServerEvent("pule:atm:robbery")
             lib.notify({
-                title = 'You got the ATM`s cash!',
+                title = P.locales["robbery_success"],
                 position = 'center-right',
                 style = {
-                    backgroundColor = '#141517',
-                    color = '#C1C2C5',
+                    backgroundColor = P.notify["background_color"],
+                    color = P.notify["text_colour"],
                     ['.description'] = {
-                      color = '#909296'
+                      color = P.notify["text_colour"]
                     }
                 },
                 icon = 'check-double',
@@ -72,16 +72,16 @@ local model = {'prop_atm_02', '	prop_atm_03', "prop_atm_01", "prop_fleeca_atm"}
             })
     else
         lib.notify({
-            title = 'You FAILED!',
+            title = P.locales["fail"],
             position = 'center-right',
             style = {
-                backgroundColor = '#141517',
-                color = '#C1C2C5',
+                backgroundColor = P.notify["background_color"],
+                color = P.notify["text_colour"],
                 ['.description'] = {
-                  color = '#909296'
+                  color = P.notify["text_colour"]
                 }
             },
-            icon = 'x',
+            icon = P.notify["icon"],
             iconColor = '#C53030'
         })
 
@@ -89,16 +89,16 @@ local model = {'prop_atm_02', '	prop_atm_03', "prop_atm_01", "prop_fleeca_atm"}
     end
 else
     lib.notify({
-        title = 'You FAILED!',
+        title = P.locales["fail"],
         position = 'center-right',
         style = {
-            backgroundColor = '#141517',
-            color = '#C1C2C5',
+            backgroundColor = P.notify["background_color"],
+            color = P.notify["text_colour"],
             ['.description'] = {
-              color = '#909296'
+              color = P.notify["text_colour"]
             }
         },
-        icon = 'x',
+        icon = P.notify["icon"],
         iconColor = '#C53030'
     })
     end
@@ -123,8 +123,8 @@ else
         local dispatch = TriggerServerEvent('qs-dispatch:server:CreateDispatchCall', {
             job = { 'police', 'sheriff', 'traffic', 'patrol' },
             callLocation = playerData.coords,
-            callCode = { code = 'ATM', snippet = 'ROBBERY' },
-            message = "Someone is robbing a atm",
+            callCode = { code = 'ATM', snippet = P.locales["robbery"] },
+            message = P.locales["Robbery desc"],
             flashes = false,
             image = "https://cdn.discordapp.com/attachments/1207717557637746759/1209514644750729276/image.png?ex=65e7334b&is=65d4be4b&hm=136f478ae6ec26be4e912e91bd70e50a781805cd1db27daeac80f0b3ba09f9ce&", -- Url for image to attach to the call 
             blip = {
@@ -132,7 +132,7 @@ else
                 scale = 1.9,
                 colour = 1,
                 flashes = true,
-                text = 'An ATM Robbery',
+                text = P.locales["Robbery desc"],
                 time = (20 * 100000),     --20 secs
             }
         })
@@ -143,8 +143,8 @@ elseif P.dispatch == "cd-dispatch" then
     local dispatch = TriggerServerEvent('cd_dispatch:AddNotification', {
         job_table = {'police', }, 
         coords = data.coords,
-        title = '10-15 - ATM Robbery',
-        message = 'ATM Robbery at '..data.street, 
+        title = P.locales["Robbery title"],
+        message = P.locales["Robbery desc"], 
         flash = 0,
         unique_id = data.unique_id,
         sound = 1,
@@ -153,7 +153,7 @@ elseif P.dispatch == "cd-dispatch" then
             scale = 1.2, 
             colour = 3,
             flashes = false, 
-            text = '911 - ATM Robbery',
+            text = P.locales["Robbery desc"],
             time = 5,
             radius = 0,
         }
@@ -161,7 +161,7 @@ elseif P.dispatch == "cd-dispatch" then
 elseif P.dispatch == "core.dispatch" then
     TriggerServerEvent(
         "core_dispatch:addMessage",
-        "ATM Robbery in progress!",
+        P.locales["Robbery title"],
         {coords[1], coords[2], coords[3]},
         "police",
         5000,
@@ -171,10 +171,10 @@ elseif P.dispatch == "core.dispatch" then
 elseif P.dispatch == "op-dispatch" then
 
         local job = "police" -- Jobs that will recive the alert
-        local text = "ATM Robbery" -- Main text alert
+        local text = P.locales["Robbery desc"] -- Main text alert
         local coords = GetEntityCoords(PlayerPedId()) -- Alert coords
         local id = GetPlayerServerId(PlayerId()) -- Player that triggered the alert
-        local title = "Robbery in progress" -- Main title alert
+        local title = P.locales["Robbery title"] -- Main title alert
         local panic = true -- Allow/Disable panic effect
        
         TriggerServerEvent('Opto_dispatch:Server:SendAlert', job, title, text, coords, panic, id)
