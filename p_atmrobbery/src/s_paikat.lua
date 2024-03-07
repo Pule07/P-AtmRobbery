@@ -19,14 +19,6 @@ ESX.RegisterServerCallback('atm:getPoliceCount', function(source, cb)
 end)
 
 
-local tyypit = {
-  "black_money",
-  "money",
-}
-
-
-local randomIndexi = math.random(#tyypit)
-local randomItemi = tyypit[randomIndexi]
 
 
 
