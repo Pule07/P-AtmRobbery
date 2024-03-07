@@ -5,12 +5,12 @@ author 'pule_dev'
 description 'P-SCRIPTS - ATM ROBBERY'
 
 client_scripts {
-    'src/*.lua',
+    'src/c_*.lua',
 
 }
 
 server_scripts {
-    'src/*.lua',
+    'src/s_*.lua',
 }
 
 shared_scripts {
