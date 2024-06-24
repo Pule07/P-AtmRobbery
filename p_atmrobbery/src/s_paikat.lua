@@ -26,9 +26,6 @@ RegisterServerEvent("pule:atm:robbery")
 AddEventHandler("pule:atm:robbery", function ()
 local xPlayer = ESX.GetPlayerFromId(source)
 
-local randomIndexi = math.random(#tyypit)
-local randomItemi = tyypit[randomIndexi]
-
 local tyypit = {
   "black_money",
   "money",
